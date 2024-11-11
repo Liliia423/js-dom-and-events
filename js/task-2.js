@@ -16,6 +16,10 @@ let caloriesArray = days.map(function (day) {
 console.log(caloriesArray); // [3010, 3200]*/
 
 function calcAverageCalories(days) {
+  if (days.length === 0) {
+    return 0;
+  }
+
   let totalCalories = 0;
   for (let i = 0; i < days.length; i++) {
     totalCalories += days[i].calories;
@@ -51,5 +55,3 @@ console.log(
 );
 
 console.log(calcAverageCalories([]));
-
-///чому виводиться NaN? - виправити
