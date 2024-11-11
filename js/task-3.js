@@ -3,18 +3,24 @@ const profile = {
   playTime: 300,
 
   getInfo() {
-    return `${profile.username} has ${profile.playTime} active hours`;
+    return `${this.username} has ${this.playTime} active hours!`;
+  },
+  changeUsername(newUserName) {
+    this.username = newUserName;
+  },
+  updatePlayTime(newPlayTime) {
+    this.playTime += newPlayTime;
   },
 };
+
 console.log(profile.getInfo());
 
-profile.changeUsername('Marco');
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
+profile.changeUsername('Marco'); // це виклик методу
+console.log(profile.getInfo('Marco'));
 
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+profile.updatePlayTime(20); // це виклик методу
+console.log(profile.getInfo());
 
-// "Jacob has 300 active hours!"
 /*Доповни обєкт profile методами для роботи з його властивостями.
 
 Метод changeUsername(newName) повинен приймати рядок (нове імя) 
