@@ -41,10 +41,15 @@ console.log(
 );*/
 
 const getUserNames = users => {
-  let newGetUserNames = [];
+  //варіант-1 без застосування .map()
+  /*let newGetUserNames = [];
   users.forEach(item => {
     newGetUserNames.push(item.name);
   });
+   return newGetUserNames;*/
+  //варіант-2 без повернення
+  //const getUserNames = users => users.map(user => user.name);
+  const newGetUserNames = users.map(user => user.name);
   return newGetUserNames;
 };
 
