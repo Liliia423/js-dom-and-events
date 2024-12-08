@@ -9,11 +9,3 @@ categories.forEach(function (category) {
   console.log(`Category: ${headerOfCategory.textContent}`);
   console.log(`Elements: ${itemsInsideCategory.length}`);
 });
-
-//Number of categories: 3
-//Category: Animals
-//Elements: 4
-//Category: Products
-//Elements: 3
-//Category: Technologies
-//Elements: 5

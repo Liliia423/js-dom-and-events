@@ -13,6 +13,7 @@ function galleryOfImages(images) {
   ul.style.listStyle = 'none';
   ul.style.gap = '16px';
 }
+
 galleryOfImages([
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
@@ -39,14 +40,3 @@ galleryOfImages([
     alt: 'Lighthouse Coast Sea',
   },
 ]);
-/*const ul = document.querySelector('ul');
-console.log(ul);
-const li = document.createElement('li');
-
-const img = document.createElement('img');
-
-li.append(img);
-ul.append(li);
-
-img.src = images.url;
-img.alt = images.alt;*/
