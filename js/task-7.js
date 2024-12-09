@@ -23,11 +23,34 @@ listItemsArray.forEach(item => {
   item.classList.add('fruits-taste');
 });
 
-//знаходимо всі ul по тегу ul і залишаємо псевдомасивом
-const ulLists = document.querySelectorAll('ul');
-console.log(ulLists); //NodeList(3)[(ul.list - of - fruit, ul, ul)];
+// Знаходимо всі ul
 
-// Знаходимо ul за класом і додаємо id
-/*const listWithClass = document.querySelector('.some-class'); 
-listWithClass.id = 'unique-id';
-console.log(listWithClass);*/
+const lists = document.querySelectorAll('ul');
+
+//прибераємо маркери через js
+ul.style.listStyle = 'none';
+
+// Проходимо по кожному ul і перевіряємо вміст його <li>
+lists.forEach(ul => {
+  const liItems = Array.from(ul.children); // Отримуємо всі <li>
+  console.log(liItems);
+  //перевірка тексту з використанням some
+  const hasUniqueContent = liItems.some(li => li.textContent.toLowerCase().includes('SUV'.toLowerCase())); // Шукаємо текст
+  if (hasUniqueContent) {
+    ul.id = 'car-id'; // Присвоюємо id
+    ul.className = 'car-class'; // Присвоюємо клас
+    console.log(ul); // Виводимо список, який відповідає умові
+  }
+});
+
+// Перевіряємо, чи клас присвоєний
+const carList = document.querySelector('#car-id'); // Шукаємо за id
+if (carList && carList.classList.contains('car-class')) {
+  console.log('Клас існує!'); // Підтверджуємо, якщо клас знайдено
+} else {
+  console.log('Вказаний Вами клас не існує !');
+}
+
+console.log(carList); // Виводимо список із заданим id
+
+console.log('Результат: список із класом "car-class" і id "car-id" знайдено!');
